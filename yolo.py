@@ -6,7 +6,6 @@ net = cv2.dnn.readNetFromDarknet('yolov3.cfg', 'yolov3.weights')
 layer_names = net.getLayerNames()  
 output_layers = [layer_names[i - 1] for i in net.getUnconnectedOutLayers()]  
 
-# Load video  
 cap = cv2.VideoCapture(0)  
 
 while True:  
@@ -46,6 +45,5 @@ while True:
     if cv2.waitKey(1) & 0xFF == 27:  
         break  
 
-# Release VideoCapture and destroy windows  
 cap.release()  
 cv2.destroyAllWindows() 
